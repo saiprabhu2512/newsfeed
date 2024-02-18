@@ -1,0 +1,9 @@
+package com.demo.instagram.newsfeed.repo;
+
+import com.demo.instagram.newsfeed.model.Comment;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface CommentRepository extends JpaRepository<Comment, Long> {
+}
