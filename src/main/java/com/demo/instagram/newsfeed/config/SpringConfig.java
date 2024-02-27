@@ -36,8 +36,8 @@ public class SpringConfig {
     private AuthFilter authFilter;
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.csrf().disable()
-                .authorizeRequests(authorize -> authorize
+      return http.csrf(csrf -> csrf.disable())
+                .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/auth/api/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/blog/api/**").permitAll()
                         .requestMatchers("/blog/api/**").hasAnyAuthority("ADMIN", "USER")
@@ -47,9 +47,8 @@ public class SpringConfig {
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 )
                 .authenticationProvider(authenticationProvider())
-                .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class);
+                .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class).build();
 
-        return http.build();
     }
 
 

@@ -18,7 +18,7 @@ public class UserController {
     @Autowired
     private UserSecureService service;
 
-    @PostMapping(value = {"/register","/signup"})
+    @PostMapping(value = {"/register/signup"})
     public ResponseEntity<?> registerUser(@RequestBody RegisterDto dto){
 
         String userdetails=	service.registerUser(dto);
@@ -27,7 +27,7 @@ public class UserController {
 
     }
 
-    @PostMapping(value = {"/login","/signin"})
+    @PostMapping(value = {"/login/signin"})
     public ResponseEntity<?>logUser(@RequestBody LoginDto dto){
 
         String logUser=	service.userLogin(dto);

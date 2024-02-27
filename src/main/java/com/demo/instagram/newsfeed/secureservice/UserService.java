@@ -16,15 +16,6 @@ public class UserService {
     private ModelMapper mapper;
     @Autowired
     private PasswordEncoder encoader;
-
-
-
-
-
-
-
-
-
     public User saveUser(User user) {
         user.setPassword(encoader.encode(user.getPassword()));
         User user2=	repository.save(user);

@@ -4,12 +4,10 @@ spring:
   datasource:
     url: jdbc:sqlserver://localhost:1433;encrypt=true;trustServerCertificate=true;databaseName=db1
     username: sa
-    password: Mouni@2004
+    password: Bharath@2024
   jpa:
     hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.SQLServerDialect
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-    properties:
-      hibernate:
-        ddl-auto: update
-        dialect: org.hibernate.dialect.SQLServerDialect

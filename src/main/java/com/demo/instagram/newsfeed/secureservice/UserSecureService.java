@@ -45,7 +45,7 @@ public class UserSecureService {
     public String userLogin(LoginDto dto) {
         Authentication authentication= (Authentication) authenticationManager.authenticate(
 
-                new UsernamePasswordAuthenticationToken(dto.getUsername(), dto.getPwd()));
+                new UsernamePasswordAuthenticationToken(dto.getUsername(), dto.getPassword()));
         SecurityContextHolder.getContext().setAuthentication(authentication);
         if(authentication.isAuthenticated()) {
             return authProvider.generateToken(dto.getUsername());
@@ -79,7 +79,7 @@ public class UserSecureService {
         user.setRoleslist(rolesList);
         repository.save(user);
 
-        return "Rgistration successfully completed";
+        return "Registration successfully completed";
 
     }
 }

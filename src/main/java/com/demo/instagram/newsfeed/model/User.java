@@ -11,11 +11,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@ToString
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

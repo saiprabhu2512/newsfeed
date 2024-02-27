@@ -4,9 +4,8 @@ import lombok.Data;
 import lombok.ToString;
 
 @Data
-@ToString
 public class LoginDto {
 
     private String username;
-    private String pwd;
+    private String password;
 }
